@@ -21,6 +21,8 @@ body.dark_theme {
     --main-color: #1C4F65;
     --darker-color: #113240;
     --text-color: #FFFFFF;
+    --channel-color: rgba(255,255,255,.2);
+    --channel-color-hover: rgba(255,255,255,.3);
     --logo: url('img/dark_theme_logo.svg');
     --sun-icon: url('img/dark_theme_sun.svg');
     --moon-icon: url('img/dark_theme_moon.svg');
@@ -31,6 +33,8 @@ body.light_theme {
     --main-color: #E4E4E4;
     --darker-color: #E4F7FF;
     --text-color: #2A2A2A;
+    --channel-color: rgba(0,0,0,.1);
+    --channel-color-hover: rgba(0,0,0,.2);
     --logo: url('img/light_theme_logo.svg');
     --sun-icon: url('img/light_theme_sun.svg');
     --moon-icon: url('img/light_theme_moon.svg');
@@ -312,6 +316,17 @@ article p {
     border-color: #738ADB;
 }
 
+.channel {
+    background-color: var(--channel-color);
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+.channel:hover {
+    background-color: var(--channel-color-hover);
+    color: var(--text-color);
+}
+
 
 /* ///////////////////////////////////////*/
             /* Footer */
@@ -415,6 +430,8 @@ article p {
         --main-color: #1C4F65;
         --darker-color: #113240;
         --text-color: #FFFFFF;
+        --channel-color: rgba(255,255,255,.2);
+        --channel-color-hover: rgba(255,255,255,.3);
         --logo: url('img/dark_theme_logo.svg');
         --sun-icon: url('img/dark_theme_sun.svg');
         --moon-icon: url('img/dark_theme_moon.svg');
@@ -427,6 +444,8 @@ article p {
         --main-color: #E4E4E4;
         --darker-color: #E4F7FF;
         --text-color: #2A2A2A;
+        --channel-color: rgba(0,0,0,.1);
+        --channel-color-hover: rgba(0,0,0,.2);
         --logo: url('img/light_theme_logo.svg');
         --sun-icon: url('img/light_theme_sun.svg');
         --moon-icon: url('img/light_theme_moon.svg');
