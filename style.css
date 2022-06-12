@@ -1,17 +1,20 @@
 * {
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     padding: 0;
     margin: 0;
-    color: #222529;
+    color: var(--text-color);
     transition: all .3s;
 }
 
+*::selection {
+    background-color: rgba(51, 204, 255, .4);
+}
+
 body, html {
-    overflow-x: hidden;
-    height: 100vh;
-    background-color: var(--main-color);
+    min-height: 100vh;
+    background-color: var(--darker-color);
 }
 
 body.dark_theme {
@@ -34,7 +37,26 @@ body.light_theme {
     --discord-icon: url('img/light_theme_discord.svg');
 }
 
-/* Header */
+a:hover {
+    color: orange;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--main-color);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--text-color);
+    border-radius: 5px;
+}
+
+/* ///////////////////////////////////////*/
+                /* Header */
+/* ///////////////////////////////////////*/
 
 .topbar {
     width: 100%;
@@ -79,6 +101,7 @@ body.light_theme {
     background-size: cover;
     height: 40px;
     width: 40px;
+    cursor: pointer;
 }
 
 .line {
@@ -95,6 +118,7 @@ body.light_theme {
     background-size: 98%;
     height: 40px;
     width: 33px;
+    cursor: pointer;
 }
 
 .discord {
@@ -107,8 +131,247 @@ body.light_theme {
     margin-left: 30px;
 }
 
+/* ///////////////////////////////////////*/
+                /* Main */
+/* ///////////////////////////////////////*/               
+
+.main {
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: var(--main-color);
+}
+
+/* Intro */
+
+article {
+    padding: 20px;
+    max-width: 1255px;
+    margin: auto;
+}
+
+article h2 {
+    margin: 0 0 10px 0;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+article p {
+    margin: 0 0 5px 0;
+    text-align: justify;
+    line-height: 24px;
+    font-size: 18px;
+}
+
+/* Languages */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    overflow: visible;
+}
+
+.items1 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.item.web {
+    width: 50%;
+    flex-grow: 0;
+    height: fit-content;
+}
+
+.item {
+    padding: 20px 30px 30px 30px;
+    border-radius: 20px;
+    background-color: var(--darker-color);
+    display: block;
+    margin: 0 20px;
+    position: sticky;
+    box-shadow: 0 0 30px -10px #000;
+}
+
+.item .title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--text-color);
+    margin-bottom: 15px;
+}
+
+.item .title img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: var(--darker-color);
+    border: 3px solid var(--text-color);
+}
+
+.webimg {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.item .title h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.example_title {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.example_content {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.item.web .title h4 {
+    flex-shrink: 0;
+}
+
+.example_content li {
+    line-height: 20px;
+    font-weight: 300;
+}
+
+    /* Sticky */
+
+.languages h2 {
+    position: sticky;
+    top: 10px;
+}
+
+.discord_js {
+    top: 70px;
+    margin-bottom: 362px;
+    border-left: 5px solid #5165F6;
+}
+
+.web {
+    top: 200px;
+    margin-top: 70vh;
+    margin-bottom: 200px;
+    border-left: 5px solid #EA4D40;
+}
+
+.java {
+    top: 365px;
+    margin-top: 100vh;
+    margin-bottom: 100px;
+    border-left: 5px solid #6CC349;
+}
+
+/* Join */
+
+.join h2 {
+    padding-left: 0!important;
+}
+
+.join_button {
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--text-color);
+    border-radius: 5px;
+    text-decoration: none!important;
+    margin: 20px 0;
+    max-width: 100%;
+    width: 278px;
+}
+.join_button img {
+    max-width: 100px;
+    width: 70px;
+    display: block;
+    flex-shrink: 0;
+}
+
+.join_button span {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 10px 0 0;
+    display: block;
+}
+
+.join_button em {
+    color: #738ADB;
+}
+
+.join_button:hover {
+    border-color: #738ADB;
+}
 
 
+/* ///////////////////////////////////////*/
+            /* Footer */
+/* ///////////////////////////////////////*/
+
+.footer {
+    width: 100%;
+    min-height: 60px;
+    padding: 20px;
+}
+
+.footer .appearence {
+    width: 200px;
+    margin: auto;
+}
+
+/* ///////////////////////////////////////*/
+            /* Responsive */
+/* ///////////////////////////////////////*/
+
+@media only screen and (max-width:900px) {
+    .container {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .item.web {
+        position: static;
+        width: calc(100% - 40px);
+        margin: 0 20px;
+        top: 200px;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .items1 {
+        width: 100%;
+    }
+    .languages h2 {
+        position: static;
+    }
+    .discord_js {
+        position: static;
+        top: 70px;
+        margin-bottom: 20px;
+    }
+    .java {
+        position: static;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .footer {
+        min-height: auto;
+    }
+}
+
+@media only screen and (max-width:440px) {
+    .item.web .title h4 {
+        flex-shrink: 1;
+        flex-grow: 2;
+    }
+}
 
 @media only screen and (max-width:400px) {
     .discord {
@@ -116,7 +379,36 @@ body.light_theme {
     }
 }
 
-/* appearence theme */
+@media only screen and (min-width:1080px) {
+    .topbar {
+        padding: 0 2.5%;
+    }
+    article h2 {
+        padding: 0 10%;
+    }
+    .profil p {
+        padding: 0 10%;
+    }
+    .container {
+        padding: 0 8%;
+    }
+    .join {
+        padding: 20px 10%;
+    }
+    .footer {
+        padding: 20px 10%;
+    }
+}
+
+@media only screen and (min-width:1300px) {
+    .container {
+        padding: 0 15%;
+    }
+}
+
+/* ///////////////////////////////////////*/
+           /* appearence theme */
+/* ///////////////////////////////////////*/
 
 @media (prefers-color-scheme: dark) {
     :root {
