@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;700;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>Lorem</h1>
+        <nav>
+            <ul>
+                <li><a href="#presentation">Présentation</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#products">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="presentation" class="presentation">
+            <h2>Présentation de l'entreprise</h2>
+            <p>
+                Bonjour et bienvenue sur le site internet de [Nom de l'entreprise] ! Nous sommes une entreprise spécialisée dans la création de sites Web pour les artisans et les petits commerçants qui souhaitent se faire connaître sur Internet.
+                Nous sommes des étudiants passionnés et expérimentés dans la création de sites Web. Nous sommes déterminés à fournir à nos clients un service de qualité supérieure et à répondre à tous leurs besoins en matière de présence en ligne.
+            </p>
+        </section>
+        <div class="sections_container">
+            <div class="left_items">
+                <section id="portfolio" class="portfolio">
+                    <h2>Nos créations</h2>
+                    <ul>
+                        <li><span>Site internet complet avec une gestion d'articles et une gestion de comptes réalisé au cours d'un projet en cours.</span><a target="_blank" href="https://timetraveltcg.fr"></a></li>
+                        <li><span>Site internet contenant seulement l'interface réalisé au cours de la formation avec une maquette.</span><a target="_blank" href="https://valou0539.github.io/The-fiasco/index.html"></a></li>
+                        <li><span>Site internet contenant seulement l'interface réalisé au cours de la formation avec une maquette.</span><a target="_blank" href="https://valou0539.github.io/water/water_com/home.html"></a></li>
+                    </ul>
+                </section>
+                <section id="products" class="products">
+                    <h2>Nos services</h2>
+                    <ul>
+                        <li>
+                            <div class="marker"></div>
+                            <span class="li_content">
+                                <g>Site internet simple :</g> Cette formule comprend un site internet faisant office seulement d'une présentation de vos activités
+                            </span>
+                        </li>
+                        <li>
+                            <div class="marker"></div>
+                            <span class="li_content">
+                                <g>Site internet complet :</g> Cette formule comprend la création d'un site internet avec par exemple une gestion de comptes, un système d'articles modifiables, la gestion d'une base de données...
+                            </span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            
+            <section id="contact" class="contact">
+                <h2>Nous contacter</h2>
+                <p>Pour nous contacter merci de donner le maximum d'informations ci-dessous :</p>
+                <form action="#" method="get">
+                    <div class="name">
+                        <input class="content_input" type="text" id="nom" name="nom">
+                        <label for="nom">Nom</label>
+                    </div>
+                    <div class="email">
+                        <input class="content_input" type="email" id="email" name="email">
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="message">
+                        <textarea class="content_input" id="message" name="message"></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <input class="submit_button" type="submit" value="Envoyer">
+                </form>
+            </section>   
+        </div>
+         
+    </main>
+    <footer>
+        <p>Tous droits réservés © 2023 - Votre nom d'entreprise</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
