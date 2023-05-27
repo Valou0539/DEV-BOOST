@@ -15,23 +15,6 @@
 </head>
 <body>
 
-
-    <?php 
-
-    include('php/alert.php');
-    
-    if(isset($_GET['message_sended'])){
-        if($_GET['message_sended']=='true'){
-            alert('Votre message à bien été envoyé, nous vous répondrons dès que possible !', 'http://dev-boost.fr');
-        }
-        
-        if($_GET['message_sended']=='false'){
-            alert("Une erreur est survenue, veuillez réessayer, si le problème persiste, vous pouvez nous contacter à l'adresse mail suivante : contact@dev-boost.fr", 'http://dev-boost.fr#contact');
-        }
-    }
-
-    ?>
-
     <header>
         <h1>DEV BOOST</h1>
         <nav>
@@ -93,41 +76,14 @@
                     <div class="subject">
                         <input class="content_input" type="text" id="sujet" name="sujet">
                         <label for="subject">Sujet</label>
-                        <?php 
-                        if(isset($_GET['empty_error'])){
-                            $empty_error = unserialize($_GET['empty_error']);
-
-                            if($empty_error['sujet']===1){
-                                echo("<p class='form_error'>Le sujet ne doit pas être vide</p>");
-                            }
-                        }
-                        ?> 
                     </div>
                     <div class="email">
                         <input class="content_input" type="email" id="email" name="email">
                         <label for="email">E-mail</label>
-                        <?php 
-                        if(isset($_GET['empty_error'])){
-                            $empty_error = unserialize($_GET['empty_error']);
-
-                            if($empty_error['email']===1){
-                                echo("<p class='form_error'>L'email ne doit pas être vide</p>");
-                            }
-                        }
-                        ?>
                     </div>
                     <div class="message">
                         <textarea class="content_input" id="message" name="message"></textarea>
                         <label for="message">Message</label>
-                        <?php 
-                        if(isset($_GET['empty_error'])){
-                            $empty_error = unserialize($_GET['empty_error']);
-
-                            if($empty_error['message']===1){
-                                echo("<p class='form_error'>Le message ne doit pas être vide</p>");
-                            }
-                        }
-                        ?>
                     </div>
                     <input class="submit_button" type="submit" value="Envoyer">
                 </form>
