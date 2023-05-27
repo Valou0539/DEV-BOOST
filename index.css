@@ -62,10 +62,12 @@ header h1 {
 
     font-weight: 900;
     color: #1d1d1f;
+
+    transition: all .3s;
 }
 
 header nav {
-    padding-bottom: 40px;
+    padding-bottom: 100px;
 }
 
 header nav ul {
@@ -234,7 +236,7 @@ main h2 {
 .portfolio a {
     flex-shrink: 0;
     width: 50px;
-    background-image: url('img/external-link.svg');
+    background-image: url('../img/external-link.svg');
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
@@ -285,7 +287,7 @@ main h2 {
     background-color: #fff;
 }
 
-.products li:nth-of-type(1) .marker {
+.products li:nth-of-type(odd) .marker {
     box-shadow: 0 0 2px #fff,
                 0 0 10px #fff, 
                 0 0 20px #ff00dd, 
@@ -294,7 +296,7 @@ main h2 {
                 0 0 50px #ff00dd;
 }
 
-.products li:nth-of-type(2) .marker {
+.products li:nth-of-type(even) .marker {
     box-shadow: 0 0 2px #fff,
                 0 0 10px #fff, 
                 0 0 20px #00d5ff, 
@@ -340,8 +342,9 @@ main h2 {
     max-width: 80%;
 }
 
-.name, .email, .message {
+.subject, .email, .message {
     position: relative;
+    margin-bottom: 25px;
 }
 
 .contact .content_input {
@@ -353,7 +356,6 @@ main h2 {
     max-width: 100%;
     padding: 30px 10px 10px 15px;
     border: 2px solid #000;
-    margin-bottom: 25px;
     border-radius: 10px;
     background-color: #fff;
     transition: all 0.3s;
@@ -400,6 +402,7 @@ main h2 {
     font-weight: 600;
     border: 5px solid #000;
     border-radius: 10px;
+    cursor: pointer;
     transition: all .3s;
 }
 
@@ -407,6 +410,14 @@ main h2 {
     background-color: #00000000;
     color: #000;
     outline: none;
+}
+
+.form_error {
+    font-size: 16px !important;
+    font-weight: 400;
+    color: #f00;
+    margin-top: 5px;
+    margin-left: 10px;
 }
 
 
@@ -429,25 +440,6 @@ footer {
 /* ########################## */
 
 
-@media only screen and (max-width: 600px) {
-    .contact {
-        padding-left: 25px!important;
-        padding-right: 25px!important;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-    .presentation {
-        box-sizing: border-box;
-        width: 100%;
-        padding: 0 5%;
-    }
-
-
-    .contact form {
-        max-width: 100%;
-    }
-}
 
 @media only screen and (max-width: 1000px) {
 
@@ -469,6 +461,59 @@ footer {
         width: 100%;
     }
 }
+
+
+
+@media only screen and (max-width: 800px) {
+
+    header h1 {
+        align-self: center;
+        margin: 150px 0 100px;
+    }
+
+    .presentation {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 5%;
+    }
+
+
+    .contact form {
+        max-width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+    header h1 {
+        font-size: 60px;
+    }
+
+    main h2 {
+        font-size: 36px;
+    }
+
+    .contact {
+        padding-left: 25px!important;
+        padding-right: 25px!important;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+
+    header h1 {
+        font-size: 48px;
+    }
+
+    main h2 {
+        font-size: 32px;
+    }
+
+
+}
+
+
 
 @media only screen and (min-width:1000px) {
     header {
@@ -514,6 +559,6 @@ footer {
 @media only screen and (min-width: 1800px) {
 
     header h1 {
-        margin-left: 20%;
+        margin-left: 17%;
     }
 }
