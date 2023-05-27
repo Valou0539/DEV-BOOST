@@ -1,17 +1,37 @@
 <!DOCTYPE html>
+<!-- Créé par Valou0539 -->
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="/static/img/logo.ico">
+    <link rel="stylesheet" href="/static/css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;700;900&display=swap" rel="stylesheet">
 
 </head>
 <body>
+
+
+    <?php 
+
+    include('php/alert.php');
+    
+    if(isset($_GET['message_sended'])){
+        if($_GET['message_sended']=='true'){
+            alert('Votre message à bien été envoyé, nous vous répondrons dès que possible !', 'http://dev-boost.fr');
+        }
+        
+        if($_GET['message_sended']=='false'){
+            alert("Une erreur est survenue, veuillez réessayer, si le problème persiste, vous pouvez nous contacter à l'adresse mail suivante : contact@dev-boost.fr", 'http://dev-boost.fr#contact');
+        }
+    }
+
+    ?>
+
     <header>
         <h1>DEV BOOST</h1>
         <nav>
@@ -27,7 +47,7 @@
         <section id="presentation" class="presentation">
             <h2>Présentation de l'entreprise</h2>
             <p>
-                Bonjour et bienvenue sur le site internet de [Nom de l'entreprise] ! Nous sommes une entreprise spécialisée dans la création de sites Web pour les artisans et les petits commerçants qui souhaitent se faire connaître sur Internet.
+                Bonjour et bienvenue sur le site internet de DEV BOOST ! Nous sommes une entreprise spécialisée dans la création de sites Web pour les artisans et les petits commerçants qui souhaitent se faire connaître sur Internet.
                 Nous sommes des étudiants passionnés et expérimentés dans la création de sites Web. Nous sommes déterminés à fournir à nos clients un service de qualité supérieure et à répondre à tous leurs besoins en matière de présence en ligne.
             </p>
         </section>
@@ -36,7 +56,7 @@
                 <section id="portfolio" class="portfolio">
                     <h2>Nos créations</h2>
                     <ul>
-                        <li><span>Site internet complet avec une gestion d'articles et une gestion de comptes réalisé au cours d'un projet en cours.</span><a target="_blank" href="https://timetraveltcg.fr"></a></li>
+                        <li><span>Site internet complet avec une gestion d'articles et une gestion de comptes en cours de développement</span><a target="_blank" href="https://timetraveltcg.fr"></a></li>
                         <li><span>Site internet contenant seulement l'interface réalisé au cours de la formation avec une maquette.</span><a target="_blank" href="https://valou0539.github.io/The-fiasco/index.html"></a></li>
                         <li><span>Site internet contenant seulement l'interface réalisé au cours de la formation avec une maquette.</span><a target="_blank" href="https://valou0539.github.io/water/water_com/home.html"></a></li>
                     </ul>
@@ -56,6 +76,12 @@
                                 <g>Site internet complet :</g> Cette formule comprend la création d'un site internet avec par exemple une gestion de comptes, un système d'articles modifiables, la gestion d'une base de données...
                             </span>
                         </li>
+                        <li>
+                            <div class="marker"></div>
+                            <span class="li_content">
+                                <g>Accompagnement complet :</g> Cette formule comprend la création d'une maquette (c'est le design du site), un site internet simple ou complet, la recherche d'un hébèrgeur web qui satisfera au mieux vos besoins, la configuration de l'hébèrgement web ainsi que la mise en ligne du site
+                            </span>
+                        </li>
                     </ul>
                 </section>
             </div>
@@ -63,18 +89,45 @@
             <section id="contact" class="contact">
                 <h2>Nous contacter</h2>
                 <p>Pour nous contacter merci de donner le maximum d'informations ci-dessous :</p>
-                <form action="#" method="get">
-                    <div class="name">
-                        <input class="content_input" type="text" id="nom" name="nom">
-                        <label for="nom">Nom</label>
+                <form action="/php/contact_traitement.php" method="post">
+                    <div class="subject">
+                        <input class="content_input" type="text" id="sujet" name="sujet">
+                        <label for="subject">Sujet</label>
+                        <?php 
+                        if(isset($_GET['empty_error'])){
+                            $empty_error = unserialize($_GET['empty_error']);
+
+                            if($empty_error['sujet']===1){
+                                echo("<p class='form_error'>Le sujet ne doit pas être vide</p>");
+                            }
+                        }
+                        ?> 
                     </div>
                     <div class="email">
                         <input class="content_input" type="email" id="email" name="email">
                         <label for="email">E-mail</label>
+                        <?php 
+                        if(isset($_GET['empty_error'])){
+                            $empty_error = unserialize($_GET['empty_error']);
+
+                            if($empty_error['email']===1){
+                                echo("<p class='form_error'>L'email ne doit pas être vide</p>");
+                            }
+                        }
+                        ?>
                     </div>
                     <div class="message">
                         <textarea class="content_input" id="message" name="message"></textarea>
                         <label for="message">Message</label>
+                        <?php 
+                        if(isset($_GET['empty_error'])){
+                            $empty_error = unserialize($_GET['empty_error']);
+
+                            if($empty_error['message']===1){
+                                echo("<p class='form_error'>Le message ne doit pas être vide</p>");
+                            }
+                        }
+                        ?>
                     </div>
                     <input class="submit_button" type="submit" value="Envoyer">
                 </form>
@@ -83,9 +136,9 @@
          
     </main>
     <footer>
-        <p>Tous droits réservés © 2023 - Votre nom d'entreprise</p>
+        <p>Tous droits réservés © 2023 - DEV BOOST</p>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="/static/js/index.js"></script>
 </body>
 </html>
